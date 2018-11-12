@@ -15,8 +15,6 @@ class GamesController < ApplicationController
   end
 
   def score
-
-
     start_time = params[:start_time].to_i
     end_time = Time.now
     grid = params[:grid].split(" ")
@@ -29,8 +27,6 @@ class GamesController < ApplicationController
     result[:message] = score_and_message.last
 
     @result = result
-
-
   end
 
   def score_and_message(attempt, grid, time)
@@ -51,5 +47,4 @@ class GamesController < ApplicationController
     json = JSON.parse(response.read)
     return json['found']
   end
-
 end
