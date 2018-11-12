@@ -1,0 +1,24 @@
+<h1>New game</h1>
+<!-- <p>Find me in app/views/games/new.html.erb</p> -->
+
+<h3>How big do you want the grid to be? Please enter a number.</h3>
+
+<form action="new" method="get">
+  <input type="text" name="grid_size" placeholder="What's your word?">
+  <input type="submit">
+</form>
+
+
+<h3>Here is your grid.</h3>
+<%= @grid %>
+
+
+<h3>How big do you want the grid to be? Please enter a number.</h3>
+<form action="score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @grid %>
+  <%= hidden_field_tag :start_time, @start_time %>
+  <!-- WARNING, grid is now saved as a string and not an array anymore -->
+  <input type="text" name="attempt" placeholder="What's your word?">
+  <input type="submit">
+</form>
