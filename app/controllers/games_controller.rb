@@ -27,6 +27,8 @@ class GamesController < ApplicationController
     result[:message] = score_and_message.last
 
     @result = result
+
+
   end
 
   def score_and_message(attempt, grid, time)
